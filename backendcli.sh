@@ -1,6 +1,6 @@
 #! /bin/bash
 
-BASEURL=https://localhost:5001/api/punchclock
+BASEURL=https://punchclock-api.azurewebsites.net/api/punchclock
 
 function list {
     curl -k -v -X GET $BASEURL 
