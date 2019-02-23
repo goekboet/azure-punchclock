@@ -1,0 +1,73 @@
+{
+	"id": "f0b1362f-3264-4389-9c2f-8556425b53cb",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": 2,
+	"allowPublicClient": false,
+	"appId": "6ce552f6-4b27-4c6c-bfb8-1e96e5083686",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2019-02-19T19:50:34Z",
+	"groupMembershipClaims": null,
+	"identifierUris": [
+		"https://punchclock-api"
+	],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [],
+	"knownClientApplications": [],
+	"logoUrl": null,
+	"logoutUrl": null,
+	"name": "punchclock-api",
+	"oauth2AllowIdTokenImplicitFlow": true,
+	"oauth2AllowImplicitFlow": false,
+	"oauth2Permissions": [
+		{
+			"adminConsentDescription": "Allow the application to access punchclock-api on behalf of the signed-in user.",
+			"adminConsentDisplayName": "Access punchclock-api",
+			"id": "6634f744-0fb2-4223-a9b7-79c65019c62d",
+			"isEnabled": true,
+			"lang": null,
+			"origin": "Application",
+			"type": "User",
+			"userConsentDescription": "Allow the application to access punchclock-api on your behalf.",
+			"userConsentDisplayName": "Access punchclock-api",
+			"value": "user_impersonation"
+		}
+	],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": null,
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [],
+	"preAuthorizedApplications": [],
+	"publisherDomain": "erikgoekgmail.onmicrosoft.com",
+	"replyUrlsWithType": [
+		{
+			"url": "https://punchclock-api",
+			"type": "Web"
+		}
+	],
+	"requiredResourceAccess": [
+		{
+			"resourceAppId": "00000002-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
+					"type": "Scope"
+				}
+			]
+		}
+	],
+	"samlMetadataUrl": null,
+	"signInUrl": "https://punchclock-api",
+	"signInAudience": "AzureADMyOrg",
+	"tags": [],
+	"tokenEncryptionKeyId": null
+}

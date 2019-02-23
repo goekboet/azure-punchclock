@@ -1,26 +1,49 @@
 #! /bin/bash
 
-BASEURL=https://punchclock-api.azurewebsites.net/api/punchclock
+BASEURL=https://localhost:5001/api/punchclock
+TOKEN=""
+
+function bearerHeader {
+    if [ -z "$TOKEN" ]
+    then
+        echo "$TOKEN"
+    else
+        echo "Bearer $TOKEN"
+    fi 
+}
+
+function signout {
+    TOKEN=""
+}
+
+function signin {
+    if [ $# -ne 2 ]
+    then
+        echo "useage: signin <username> <password>"
+    else
+        TOKEN=$(dotnet fetchToken.dll $1 $2)
+    fi
+}
 
 function list {
-    curl -k -v -X GET $BASEURL 
+    curl -k -i -H "Authorization:$(bearerHeader)" -X GET $BASEURL 
 }
 
 function get {
-    curl -k -v -X GET ${BASEURL}/${1}
+    curl -k -i -H "Authorization:$(bearerHeader)" -X GET ${BASEURL}/${1}
 }
 
 function new {
-    curl -k -v -X POST $BASEURL \
+    curl -k -i -H "Authorization:$(bearerHeader)" -X POST $BASEURL \
     -H "Content-Length: 0"
 }
 
 function punch {
-    curl -k -v -X POST ${BASEURL}/${1} \
+    curl -k -i -H "Authorization:$(bearerHeader)" -X POST ${BASEURL}/${1} \
     -H "Content-Length: 0"
 }
 
 function remove {
-    curl -k -v -X DELETE ${BASEURL}/${1} \
+    curl -k -i -H "Authorization:$(bearerHeader)" -X DELETE ${BASEURL}/${1} \
     -H "Content-Length: 0"
 }

@@ -2,3 +2,6 @@ bin
 obj
 .vscode
 azurefns.sh
+discoverydoc.json
+fetchToken.dll
+notes.txt

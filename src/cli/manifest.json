@@ -1,0 +1,67 @@
+{
+	"id": "99305e81-74b6-4057-b745-6f0a08c5fed1",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": 2,
+	"allowPublicClient": true,
+	"appId": "a8ce3afd-dac3-4e22-98fc-2f53fb1ff88f",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2019-02-19T19:55:09Z",
+	"groupMembershipClaims": null,
+	"identifierUris": [],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [],
+	"knownClientApplications": [],
+	"logoUrl": null,
+	"logoutUrl": null,
+	"name": "punchclock-cli",
+	"oauth2AllowIdTokenImplicitFlow": true,
+	"oauth2AllowImplicitFlow": false,
+	"oauth2Permissions": [],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": null,
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [],
+	"preAuthorizedApplications": [],
+	"publisherDomain": "erikgoekgmail.onmicrosoft.com",
+	"replyUrlsWithType": [
+		{
+			"url": "https://punchclock-cli",
+			"type": "InstalledClient"
+		}
+	],
+	"requiredResourceAccess": [
+		{
+			"resourceAppId": "6ce552f6-4b27-4c6c-bfb8-1e96e5083686",
+			"resourceAccess": [
+				{
+					"id": "6634f744-0fb2-4223-a9b7-79c65019c62d",
+					"type": "Scope"
+				}
+			]
+		},
+		{
+			"resourceAppId": "00000002-0000-0000-c000-000000000000",
+			"resourceAccess": [
+				{
+					"id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
+					"type": "Scope"
+				}
+			]
+		}
+	],
+	"samlMetadataUrl": null,
+	"signInUrl": null,
+	"signInAudience": "AzureADMultipleOrgs",
+	"tags": [],
+	"tokenEncryptionKeyId": null
+}

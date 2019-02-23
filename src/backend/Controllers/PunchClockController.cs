@@ -2,19 +2,22 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using backend.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class PunchClockController : ControllerBase
     {
         private static IPunchClockRepository Repo { get; } = new PunchClockRepo();
 
-        private const string MockUserId = "someUserId";
+        private string UserId => User.FindFirst("http://schemas.microsoft.com/identity/claims/objectidentifier").Value;
 
         // GET api/punchclock
         [HttpGet]
@@ -27,7 +30,7 @@ namespace backend.Controllers
         [HttpGet("{id}")]
         public ActionResult<PunchClockResult<PunchClock>> Get(Guid id)
         {
-            var key = new PunchClockKey(MockUserId, id);
+            var key = new PunchClockKey(UserId, id);
 
             var r = Repo.Get(key);
 
@@ -45,27 +48,27 @@ namespace backend.Controllers
         [HttpPost]
         public ActionResult Post()
         {
-            var newKey = PunchClockKey.New(MockUserId);
+            var newKey = PunchClockKey.New(UserId);
             var clock = Repo.Punch(newKey);
 
-            return Created("someUri", clock);
+            return Created($"api/punchclock/{clock.PunchClockId}", clock);
         }
 
         // POST api/punchclock/5
         [HttpPost("{id}")]
         public ActionResult Punch(Guid id)
         {
-            var key = new PunchClockKey(MockUserId, id);
+            var key = new PunchClockKey(UserId, id);
             var newState = Repo.Punch(key);
 
-            return Created("someUrl", newState);
+            return Created($"api/punchclock/{newState.PunchClockId}", newState);
         }
 
         // DELETE api/punchclock/5
         [HttpDelete("{id}")]
         public ActionResult Delete(Guid id)
         {
-            var key = new PunchClockKey(MockUserId, id);
+            var key = new PunchClockKey(UserId, id);
             Repo.Delete(key);
 
             return NoContent();
